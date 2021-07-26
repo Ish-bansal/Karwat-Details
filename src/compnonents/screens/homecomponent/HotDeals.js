@@ -19,7 +19,7 @@ const HotDeals = (props) => {
             <div className="products">
                 <div className="hot-deal-wrapper">
                     <div className="image"> <img src={props.imgsrc} alt="" /> </div>
-                        <div className="sale-offer-tag"><span>{props.poff}  off</span></div>
+                        <div className="sale-offer-tag"><span>{props.poff} <br/> off</span></div>
                         <div className="timing-wrapper">
                             <div className="box-wrapper">
                                 <div className="date box"> <span className="key">120</span> <span className="value">DAYS</span> </div>

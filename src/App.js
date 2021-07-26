@@ -3,7 +3,9 @@ import NavBar from './compnonents/Navbar'
 import "./App.css"
 import {BrowserRouter,Route,Switch} from 'react-router-dom'
 import Footer from './compnonents/Footer'
-import Home from './compnonents/screens/Home'
+// import Home from './compnonents/screens/Home'
+// import Category from './compnonents/screens/category/Category';
+import Detail from './compnonents/screens/Detail/Detail';
 
 
 
@@ -14,7 +16,7 @@ const Routing = ()=>{
   return(
     <Switch>
       <Route exact path="/" >
-        <Home />
+        <Detail />
       </Route>
      
     </Switch>

@@ -1,0 +1,33 @@
+const AccordationData=[
+    {
+        link:"#collapseOne",
+        categoryName:"Camera",
+        id:"collapseOne",
+    },
+    {
+        link:"#collapseTwo",
+        categoryName:"Desktops",
+        id:"collapseTwo",
+    },
+    {
+        link:"#collapseThree",
+        categoryName:"Pants",
+        id:"collapseThree",
+    },
+    {
+        link:"#collapseFour",
+        categoryName:"Bags",
+        id:"collapseFour",
+    },
+    {
+        link:"#collapseFive",
+        categoryName:"Hats",
+        id:"collapseFive",
+    },
+    {
+        link:"#collapseSix",
+        categoryName:"Accessories",
+        id:"collapseSix",
+    },
+]
+export default AccordationData;
