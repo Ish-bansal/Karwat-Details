@@ -26,7 +26,7 @@ const Hotdata = [
         pname:"Floral Print Buttoned",
         oprice : "$800.00",
         dprice: "$600.00"
-    }
+    },
 
 ];
 

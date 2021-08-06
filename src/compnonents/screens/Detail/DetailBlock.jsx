@@ -1,36 +1,51 @@
 import React from 'react';
+import { SingleProduct,Multi } from '../../../compnonents/screens/Detail/SingleProduct';
+import {DetailBlockData,NewDetailBlock} from '../../../compnonents/screens/Detail/DetailBlockData';
+// import DetailBlockCo from './DetailBlockCo';
 
 const DetailBlock=(props)=>{
     return(
         <>
          <div className="detail-block">
-				<div className="row  wow fadeInUp">
+				<div className="row wow fadeInUp">
                 
-					     <div className="col-xs-12 col-sm-6 col-md-5 gallery-holder">
+					    <div className="col-xs-12 col-sm-6 col-md-5 gallery-holder">
     					<div className="product-item-holder size-big single-product-gallery small-gallery">
+        				<div id="owl-single-product">
+            			{
+							DetailBlockData.map((dval)=>{
+								return(
+									<SingleProduct
+									id={dval.id}
+            						link={dval.link}/>
+								)
+							})
+						}
 
-        <div id="owl-single-product">
-            <div className="single-product-gallery-item" id={props.id}>
-                <a data-lightbox="image-1" data-title="Gallery" href={props.link}>
-                    <img className="img-responsive" alt="" src="assets/images/blank.gif" data-echo={props.link} />
-                </a>
-            </div>
-            </div>
-            {/* {/* /.single-product-slider */} 
+
+            			</div>
+            {/* single-product-slider */} 
 
 
         <div className="single-product-gallery-thumbs gallery-thumbs">
 
             <div id="owl-single-product-thumbnails">
-                <div className="item">
-                    <a className="horizontal-thumb active" data-target="#owl-single-product" data-slide={props.slide} href={props.href}>
-                        <img className="img-responsive" width="85" alt="" src="assets/images/blank.gif" data-echo={props.link1} />
-                    </a>
-                </div>
-            </div> {/* {/* /#owl-single-product-thumbnails */} 
-            </div> {/* {/* /.gallery-thumbs */} 
-</div>  {/* {/* /.single-product-gallery */} 
-</div>  {/* {/* /.gallery-holder */}        			 
+               {
+				   NewDetailBlock.map((dval)=>{
+					   return(
+						   <Multi
+						   slide={dval.slide}
+							href={dval.href}
+							link1={dval.link1}
+						/>
+					   )
+				   })
+			   }
+
+            </div> {/* #owl-single-product-thumbnails */} 
+            </div> {/* .gallery-thumbs */} 
+</div>  {/* .single-product-gallery */} 
+</div>  {/* .gallery-holder */}        			 
 					<div className='col-sm-6 col-md-7 product-info-block'>
 						<div className="product-info">
 							<h1 className="name">Floral Print Buttoned</h1>

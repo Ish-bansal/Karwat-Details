@@ -1,7 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
-
-
+// import { Link } from 'react-router-dom'
 
 
 
@@ -13,7 +11,7 @@ const HotDeals = (props) => {
     return (
 
 
-
+<>
 
         <div className="item">
             <div className="products">
@@ -60,14 +58,14 @@ const HotDeals = (props) => {
                     {/* <!-- /.cart --> */}
                 </div>
             </div>
-
+</>
 
     )
 }
 
 
 
-export default HotDeals
+export default HotDeals;
 
 
 

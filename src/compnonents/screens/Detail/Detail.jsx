@@ -3,11 +3,32 @@ import HotDeals from '../../../compnonents/screens/homecomponent/HotDeals'
 import Hotdata from '../../../compnonents/screens/homecomponent/Hotdata'
 import Testimonials from '../../../compnonents/screens/homecomponent/Testimonials'
 import Testimonialdata from '../../../compnonents/screens/homecomponent/Testimonialdata'
-import UpsellData from '../../../compnonents/screens/Detail/UpsellData'
+import DetailBlock from '../../../compnonents/screens/Detail/DetailBlock';
 import Upsell from '../../../compnonents/screens/Detail/Upsell'
-import DetailBlock from '../../../compnonents/screens/Detail/DetailBlock'
-import DetailBlockData from '../../../compnonents/screens/Detail/DetailBlockData'
+// import { DetailBlockData } from './DetailBlockData';
 
+
+function nproduct(val) {
+
+	return (
+		 <HotDeals
+			  imgsrc={val.imgsrc}
+			  poff={val.poff}
+			  pname={val.pname}
+			  oprice={val.oprice}
+			  dprice={val.dprice}
+		 />
+	)
+}
+// function ucard(uval){
+//     return(
+//         <Upsell
+//             image={uval.image}
+//             sale={uval.sale}
+//             tag={uval.tag}
+//         />
+//     )
+// }
 const Detail=()=>{
     return(
         <>
@@ -28,25 +49,21 @@ const Detail=()=>{
 			<div className='col-md-3 sidebar'>
 				<div className="sidebar-module-container">
 				<div className="home-banner outer-top-n">
-                <img src="assets/images/banners/LHS-banner.jpg" alt="Image"/>
+                <img src="assets/images/banners/LHS-banner.jpg" alt=""/>
                 </div>	
                   {/* ============================================== HOT DEALS ==============================================  */}
-                 <div classNameName="sidebar-widget hot-deals wow fadeInUp outer-bottom-xs">
-                    <h3 classNameName="section-title">hot deals</h3>
-                    <div classNameName="owl-carousel sidebar-carousel custom-carousel owl-theme outer-top-ss">
-                        {Hotdata.map((val)=>{
-                            return (
-                                <HotDeals
-                                    imgsrc={val.imgsrc}
-                                    poff={val.poff}
-                                    pname={val.pname}
-                                    oprice={val.oprice}
-                                    dprice={val.dprice}
-                                />
-                            )
-                        })}
-                    </div>  {/* sidebar-widget */}
-                    </div>
+				  <div className="sidebar-widget hot-deals wow fadeInUp outer-bottom-xs">
+                                        <h3 className="section-title">hot deals</h3>
+                                        <div className="owl-carousel sidebar-carousel custom-carousel owl-theme outer-top-ss">
+
+
+
+
+                                             {Hotdata.map(nproduct)}
+
+                                        </div>
+                                        {/* <!-- /.sidebar-widget --> */}
+                                   </div>
                 {/* ============================================== HOT DEALS: END ==============================================  */}
                 {/* ============================================== NEWSLETTER ============================================== */}
 <div className="sidebar-widget newsletter wow fadeInUp outer-bottom-small outer-top-vs">
@@ -61,49 +78,32 @@ const Detail=()=>{
 			<button className="btn btn-primary">Subscribe</button>
 		</form>
 	</div>
-</div>
 </div>	
  {/* ============================================== NEWSLETTER: END ============================================== */}
-                        <div classNameName="sidebar-widget  wow fadeInUp outer-top-vs ">
-                            <div id="advertisement" classNameName="advertisement">
-                                {Testimonialdata.map((val)=>{
-                                    return (
-                                        <Testimonials
-                                            imgsrc={val.imgsrc}
-                                            data={val.data}
-                                            name={val.name}
-                                            company={val.company}
-                                        />
-                                    )
-                                })}
-                            </div>
-                        </div>
-                    </div>
-                    {/* col-md-3 sidebar */}
-                <div class='col-md-9'>
-                {DetailBlockData.map((val)=>{
+ <div className="sidebar-widget  wow fadeInUp outer-top-vs ">
+                <div id="advertisement" className="advertisement">
+                    {Testimonialdata.map((hval)=>{
                     return(
-                        <DetailBlock 
-                            id={val.id}
-                            link={val.link}
-                            slide={val.slide}
-                            href={val.href}
-                            link1={val.link1}
-                        />
+                        <Testimonials
+                        imgsrc={hval.imgsrc}
+                        data={hval.data}
+                        name={hval.name}
+                        company={hval.company}
+                         />
                     )
                 })}
+                </div>
+            </div>
+						</div> {/*sidebar module container  */}
+                    </div>
+                    {/* col-md-3 sidebar */}
 
-                {
-                    UpsellData.map((val)=>{
-                    return(
-                        <Upsell
-                            image={val.image}
-                            sale={val.sale}
-                            tag={val.tag}
-                        />
-                    )
-                })
-                }
+					
+                <div class="col-md-9">
+				<DetailBlock/>
+				<Upsell/>
+
+                
                 
                 </div> {/* /.col */} 
 			<div class="clearfix"></div>
